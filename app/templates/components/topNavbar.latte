@@ -1,0 +1,35 @@
+<!-- Static navbar -->
+<div class="navbar navbar-default navbar-static-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="{$basePath}">Informační systém</a>
+    </div>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li {ifCurrent :Homepage:default} class="active"{/ifCurrent} ><a href="{link Homepage:default}">Hlavní strana</a></li>
+        {if !$user->isLoggedIn()}
+            <li {ifCurrent :Sign:login} class="active"{/ifCurrent}> <a href="{link Sign:login}">Přihlásit se</a> </li>
+        {/if}
+        {if $user->isLoggedIn()}
+            <li {ifCurrent :Client:clientList} class="active"{/ifCurrent} ><a href="{link Client:clientList}">Výpis zákazníků</a></li>
+            <li {ifCurrent :Web:webList} class="active"{/ifCurrent}><a href="{link Web:webList}">Výpis webů</a></li>
+            <li {ifCurrent :Client:addClient} class="active"{/ifCurrent}><a href="{link Client:addClient}">Přidat zákazníka</a></li>
+            <li {ifCurrent :WebPage:addWeb} class="active"{/ifCurrent}><a href="{link Web:addWeb}">Přidat web</a></li>
+            
+        {/if}
+      </ul>
+    {if $user->isLoggedIn()}
+        <ul class="nav navbar-nav navbar-right">
+            <li> <a>Jste přihlášen jako {$user->identity->nick}</a></li>
+            <li {ifCurrent :Sign:logout} class="active"{/ifCurrent}><a n:href="sign:out">Odhlásit se</a></li>
+        </ul>
+    {/if}
+    </div><!--/.nav-collapse -->
+  </div>
+</div>

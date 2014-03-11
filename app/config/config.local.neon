@@ -1,0 +1,9 @@
+parameters:
+
+nette:
+	database:
+		dsn: 'mysql:host=localhost;dbname=informationsystem'
+		user: adminis
+		password: admin147
+		options:
+			lazy: yes

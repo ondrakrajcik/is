@@ -1,0 +1,11 @@
+{block content}
+    <section>
+        <h2 n:block="title">Přihlásit se</h2>
+    </section>
+    <section>
+        {control signInForm}
+        {foreach $flashes as $flash}
+            <div class="flash {$flash->type}">{$flash->message}</div>
+        {/foreach}
+    </section>
+{/block}

@@ -1,0 +1,38 @@
+h1
+{
+    font-size: 16pt;
+    color: rgb(230,230,230);
+}
+
+h2
+{
+    font-size: 14pt;
+}
+
+h3{
+    font-size: 14pt;
+    font-weight: 900;
+    padding-bottom: 8px;
+}
+
+.text_style0{
+    color: rgb(20,20,20);
+}
+
+.text_style1, .text_style1 a{
+    color: rgb(230,230,230);
+}
+
+.text_style2, .text_style2 a{
+    color: rgb(80,80,80);
+    font-weight: 900;
+    text-size: 80px;
+}
+
+#adminPanel a{
+    padding-right: 5px;
+}
+
+.userName{
+    font-weight: 900;
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+        <meta name="viewport"  content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Ondřej Krajčík">
+	<title>IS - {block title|striptags}{/block}</title>
+        <link rel="stylesheet" href="{$basePath}/css/bootstrap/bootstrap.min.css"> 
+        <link rel="stylesheet" href="{$basePath}/css/style.css">
+        <link rel="stylesheet" href="{$basePath}/css/textStyle.css">
+
+        {block head}{/block}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script href="{$basePath}/js/bootstrap/bootstrap.min.js"></script>        
+        <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+        
+</head>
+<body>
+    {include "components/topNavbar.latte"}
+    <div class="container" id="content">
+        <div class="jumbotron">
+            {include content}
+        </div>
+    </div>
+    {include "components/footer.latte"}
+</body>
+</html>

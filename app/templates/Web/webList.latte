@@ -1,0 +1,19 @@
+{block content}
+<section>
+    <h2 n:block="title">Výpis webů</h2>
+</section>
+<section>    
+    <div class="container">
+
+    </div>
+</section>
+<section>
+    <table class="table table-striped indentation-top">
+        <tr> <td> ID zákazníka </td> <td> URL </td> <td> MySQL </td> <td> FTP </td> <td> Emaily </td> <td> Cena </td>  <td> Administrace </td></tr>
+        {foreach $webpages as $web}
+            <tr> <td> {$web->zID} </td> <td> <a href="{$web->url}"> {$web->url} </a> </td> <td> {$web->mysql} </td> <td> {$web->ftp} </td> <td> {$web->emails} </td> <td> {$web->price} </td>  <td> <a n:href="Web:editWeb, webID=> $web->webID"> <img src="{$basePath}/images/icon/editBtn.png" alt="Editovat"> </a> </td></tr>
+        {/foreach}
+        
+    </table>
+</section>
+{/block}

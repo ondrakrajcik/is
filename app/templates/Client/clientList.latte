@@ -1,0 +1,13 @@
+{block content}
+    <section>
+        <h2 n:block="title">  Výpis zákazníků  </h2>
+    </section>
+    <section>
+        <table class="table table-striped indentation-top">
+            <tr>  <td> Firma/Osvč </td> <td> IČ  </td> <td> DIČ </td>  <td> Email </td> <td> Telefon </td> <td> Administrace </td> <td> </td></tr>    
+            {foreach $clients as $client}
+                <tr>  <td> {$client->company} </td> <td> {$client->ic}  </td> <td> {$client->dic} </td> <td> {$client->email} </td> <td> {$client->phone} </td> <td>  <td> <a n:href="Web:webDetail, clientID => $client->clientID"> <img src="{$basePath}/images/icon/editBtn.png" alt=""></a> <a n:href="Client:editClient, clientID => $client->clientID"> <img src="{$basePath}/images/icon/detailBtn.png" alt=""></a>  </td></tr>
+            {/foreach}
+        </table>
+    </section>
+{/block}
